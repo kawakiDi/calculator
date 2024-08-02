@@ -1,59 +1,88 @@
+@font-face {
+  font-family: 'KodeMono';
+  src: url(./KodeMono-Regular.woff2) format(woff2);
+  font-weight: 400;
+  font-display: swap;
+}
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+html {
+  background-image: url('./palm-leaf.svg');
+  background-size: 11%;
+  background-color: rgb(235 161 160 / 0.1);
+  font-size: 30px;
+  font-family: 'KodeMono', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(90deg,
+      rgba(235, 161, 160, 0.3) 0%,
+      rgba(211, 139, 153, 0.3) 50%,
+      rgba(203, 131, 152, 0.3) 100%);
+}
+
 .main {
-  padding-top: 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
-  width: 200px;
-  height: 400px;
-  padding: 5px;
-  margin-inline: auto;  
-  background-color: springgreen;
+  width: 276px;
+  border-radius: 2%;
+  padding: 20px;
+  background-color: hsl(178, 87%, 46%);
+  box-shadow: 2px 2px 2px #0dbdb8,
+    -2px -2px 2px #11fff8,
+    0 0 10px #000000;
 }
 
 .calculator__screen {
-  position: relative;
-  width: 100%;
-  height: calc(100% / 3);
-  margin-bottom: 3px;
-  background-color: burlywood;
-  overflow: auto;
-  padding: 2px;
-}
-
-.calculator__screen-history {
-  height: calc(100% / 1.5);
-  width: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: end;
   align-items: end;
+  min-height: 125px;
   padding: 10px;
-  background-color: hsl(182, 45%, 50%);
-}
-
-.calculator__screen-main {
-  height: calc(100% / 3);
-  width: 100%;
-  display: inline-flex;
-  justify-content: end;
-  align-items: end;
-  padding: 10px;
-  position: sticky;
-  left: 0;
-  bottom: 0;
   background-color: hsl(182, 60%, 50%);
+  margin-bottom: 20px;
+  border-radius: 5%;
+  box-shadow: 1px 1px 1px #0dbdb8,
+    -1px -1px 1px #11fff8;
+  overflow: auto;
 }
 
 .calculator__buttons {
-  width: 100%;
-  height: calc(100% / 1.5 - 5px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 2px;
+  gap: 12px;
+}
+
+.calculator__button {
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 20%;
+  background: linear-gradient(145deg, #10eee7, #0ec8c2);
+  box-shadow: 2px 2px 2px #0dbdb8,
+  -2px -2px 2px #11fff8;
+}
+
+.calculator__button:active {
+  filter: brightness(80%);
 }
