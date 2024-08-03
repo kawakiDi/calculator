@@ -4,7 +4,7 @@ let operationSign = ''
 let resultActive = false
 
 const digitButtons = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
-const actionButtons = ['-', '+', 'x', '/', '%']
+const actionButtons = ['-', '+', 'x', '÷', '%']
 const idActionButtons = ['back', 'clear', 'percent', 'division', 'multiplication', 'subtraction', 'addition', 'result']
 const screenOut = document.querySelector('.calculator__screen')
 
@@ -148,7 +148,7 @@ document.querySelector('.calculator__buttons').onclick = (event) => {
         firstValue = roundingNumberAfterDot(firstValue * secondValue, 3)
         break
       }
-      case '/': {
+      case '÷': {
         if (secondValue === '0') {
           clearAll()
           return
