@@ -23,7 +23,7 @@ html {
   background-image: url('./palm-leaf.svg');
   background-size: 11%;
   background-color: rgb(235 161 160 / 0.1);
-  font-size: 30px;
+  font-size: 24px;
   font-family: 'KodeMono', sans-serif;
 }
 
@@ -44,12 +44,8 @@ body {
 }
 
 .calculator {
-  width: 276px;
-  border-radius: 2%;
-  padding: 20px;
-  background: rgb(76,111,104);
-  background: linear-gradient(90deg, rgba(76,111,104,1) 0%, rgba(91,131,120,1) 50%, rgba(86,124,113,1) 100%);
-  box-shadow: inset -2px -2px 0px 0px #000000, 0px 0px 0px 0px #e0dbdd, inset 0px 0px 6px 1px #000000;
+  background-color: #11EEE8;
+  border-radius: 20px;
 }
 
 .calculator__screen {
@@ -57,46 +53,43 @@ body {
   justify-content: end;
   align-items: end;
   min-height: 125px;
-  padding: 10px;
-  background-color: #e9d4ac;
-  margin-bottom: 20px;
-  border-radius: 5%;
-  box-shadow: inset -3px 4px 10px 1px #695f4d, 0px 0px 6px 0px #e0dbdd, inset -1px 1px 18px 1px #000000;
+  padding: 0 20px 10px 0;
   overflow: auto;
+  background-color: #11EEE8;
+  border-radius: 20px 20px 0 0;
+  font-size: 32px;
 }
 
 .calculator__buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 12px;
+  gap: 10px;
+  padding: 16px;
+  background-color: #10DDD8;
+  border-radius: 20px;
 }
 
 .calculator__button {
-  height: 50px;
+  height: 64px;
   aspect-ratio: 1;
   border-radius: 20%;
+  text-shadow: 0 0 40px #0155B5;;
 }
 
 .calculator__button:active {
+  background-color: #10DDD8;
   filter: brightness(80%);
 }
 
-.calculator__button--gray-light {
-  background: linear-gradient(145deg, #b7b7b9, #9a9a9c);
-  box-shadow: inset -2px 2px 1px #d9d9de,
-  -2px 2px 1px #000000, inset 0px -1px 6px #000000;
+.calculator__button-number {
+  color: #F2F6CC;
 }
 
-.calculator__button--pink {
-  background: linear-gradient(145deg, #ffaac8, #e08fa8);
-  box-shadow: inset -2px 2px 1px #e0dbdd,
-  -2px 2px 1px #000000, inset 0px -1px 6px #000000;
+.calculator__button-action {
+  color: #0155B5;
 }
 
-.calculator__button--gray {
-  background: linear-gradient(145deg, #4b4c50, #4b4c50);
-  box-shadow: inset -2px 2px 1px #8e8b8b,
-  -2px 2px 1px #000000,
-  inset 0px -1px 6px #000000;
+#clear {
+  color: #F90808;
 }
