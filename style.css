@@ -1,7 +1,15 @@
 @font-face {
   font-family: 'KodeMono';
-  src: url(./KodeMono-Regular.woff2) format(woff2);
+  src: url(KodeMono-Regular.woff2) format(woff2);
   font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rage';
+  src: url('RageItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -9,6 +17,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
+  user-select: none;
 }
 
 button {
@@ -17,14 +26,15 @@ button {
   margin: 0;
   padding: 0;
   font-size: inherit;
+  font-family: inherit;
 }
 
 html {
-  background-image: url('./palm-leaf.svg');
+  background-image: url('palm-leaf.svg');
   background-size: 11%;
   background-color: rgb(235 161 160 / 0.1);
-  font-size: 24px;
-  font-family: 'KodeMono', sans-serif;
+  font-size: 34px;
+  font-family: 'Rage', sans-serif;
 }
 
 body {
@@ -41,23 +51,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
 
 .calculator {
   background-color: #11EEE8;
   border-radius: 20px;
+  box-shadow: 0 0 2px #0155B5;
+  width: 318px;
 }
 
 .calculator__screen {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  min-height: 125px;
-  padding: 0 20px 10px 0;
+  min-height: 60px;
+  max-height: 180px;
+  padding-right: 22px;
+  text-align: end;
   overflow: auto;
   background-color: #11EEE8;
   border-radius: 20px 20px 0 0;
-  font-size: 32px;
+  font-size: 46px;
+  font-family: 'KodeMono', sans-serif;
+  user-select: all;
+  word-break: break-all;
+}
+
+.calculator__screen::-webkit-scrollbar {
+  width: 15px; /* Ширина всего элемента навигации */
+  padding-block: 5px;
+}
+
+.calculator__screen::-webkit-scrollbar-track {
+  background: #11EEE8;; /* Цвет дорожки */
+}
+
+.calculator__screen::-webkit-scrollbar-thumb {
+  background-color: hsl(179, 86%, 46%); /* Цвет бегунка */
+  border-radius: 20px; /* Округление бегунка */
+  border: 1px solid #0155B5; /*Оформление границ бегунка*/
 }
 
 .calculator__buttons {
@@ -68,6 +98,7 @@ body {
   padding: 16px;
   background-color: #10DDD8;
   border-radius: 20px;
+  box-shadow: 0 0 1px #0155B5;
 }
 
 .calculator__button {
@@ -82,6 +113,12 @@ body {
   filter: brightness(80%);
 }
 
+@media (hover: hover) {
+  button:hover { 
+    background-color: hsl(179, 78%, 46%);
+   }
+}
+
 .calculator__button-number {
   color: #F2F6CC;
 }
@@ -90,6 +127,15 @@ body {
   color: #0155B5;
 }
 
-#clear {
+#Delete {
   color: #F90808;
 }
+
+/* 
+___Список изменений___
+- шрифт
+- ховер эффект, только для пк
+- тени, калькулятор, область ввода
+- стралка, на кнопке удаление единицы значения
+- ограничение экрана, скролл
+*/
