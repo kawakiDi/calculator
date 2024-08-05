@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'KodeMono';
-  src: url(KodeMono-Regular.woff2) format(woff2);
+  src: url('./KodeMono-Regular.woff2') format(woff2);
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Rage';
-  src: url('RageItalic.woff2') format('woff2');
+  src: url('./RageItalic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
